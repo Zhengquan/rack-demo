@@ -1,7 +1,7 @@
 require './app'
 require './admin'
 
-buidler = Rack::Builder.new {
+builder = Rack::Builder.new {
   use Rack::ETag
   # routes
   map '/' do 
@@ -11,5 +11,4 @@ buidler = Rack::Builder.new {
      run Admin::Server.new
   end
 }
-
-Rack::Handler::Thin.run buidler, :Port => ENV['port'] || 3000
+run builder

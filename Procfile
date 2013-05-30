@@ -1,1 +1,1 @@
-web: env port=$PORT bundle exec rackup config.ru
+web: bundle exec rackup config.ru -p $PORT
