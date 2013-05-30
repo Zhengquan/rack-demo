@@ -12,4 +12,4 @@ buidler = Rack::Builder.new {
   end
 }
 
-Rack::Handler::Thin.run buidler, :Port => 9292
+Rack::Handler::Thin.run buidler, :Port => ENV['port'] || 3000
